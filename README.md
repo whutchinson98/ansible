@@ -30,4 +30,5 @@ docker
 docker-compose
 language-server
 aws
+dotfiles
 ```

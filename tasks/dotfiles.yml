@@ -7,6 +7,9 @@
     - install
 - name: Clear zshrc
   shell: rm -rf ~/.zshrc
+  tags:
+    - dotfiles
+    - install
 - name: Unstow
   shell: |
     cd .dotfiles
@@ -18,5 +21,6 @@
     stow scripts
     stow tmux
     stow zsh
-- name: Source zsh
-  shell: source ~/.zshrc
+  tags:
+    - dotfiles
+    - install
