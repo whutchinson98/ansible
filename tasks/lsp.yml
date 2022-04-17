@@ -1,0 +1,35 @@
+- name: Install TSL
+  npm:
+    name: typescript-language-server
+    global: yes
+  tags:
+    - language-server
+- name: Install ESL
+  npm:
+    name: vscode-langservers-extracted
+    global: yes
+  tags:
+    - language-server
+- name: Install Yaml LS
+  npm:
+    name: yaml-language-server
+    global: yes
+  tags:
+    - language-server
+- name: Install Prisma LS
+  npm:
+    name: '@prisma/language-server'
+    global: yes
+  tags:
+    - language-server
+- name: Install Docker LS
+  npm:
+    name: dockerfile-language-server-nodejs
+    global: yes
+  tags:
+    - language-server
+- name: Gopls
+  shell: go get golang.org/x/tools/gopls@latest
+  tags:
+    - language-server
+    - golang

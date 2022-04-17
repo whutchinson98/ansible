@@ -1,0 +1,43 @@
+- name: Install Typescript
+  npm:
+    name: typescript
+    global: yes
+  tags:
+    - install
+    - npm
+- name: Install Eslint
+  npm:
+    name: eslint
+    global: yes
+  tags:
+    - install
+    - npm
+- name: Install eslint_d
+  npm:
+    name: eslint_d
+    global: yes
+  tags:
+    - install
+    - npm
+- name: Install Prettier
+  npm:
+    name: prettier
+    global: yes
+  tags:
+    - install
+    - npm
+- name: Install TS-Node
+  npm:
+    name: ts-node
+    global: yes
+  tags:
+    - install
+    - npm
+- name: Install AWS-CDK
+  npm:
+    name: aws-cdk
+    global: yes
+  tags:
+    - install
+    - npm
+    - aws

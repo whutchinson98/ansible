@@ -1,0 +1,22 @@
+- name: Dotfiles
+  ansible.builtin.git:
+    repo: 'https://github.com/whutchinson98/.dotfiles'
+    dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
+  tags:
+    - dotfiles
+    - install
+- name: Clear zshrc
+  shell: rm -rf ~/.zshrc
+- name: Unstow
+  shell: |
+    cd .dotfiles
+    stow alacritty
+    stow compton
+    stow i3
+    stow nvim
+    stow prettier
+    stow scripts
+    stow tmux
+    stow zsh
+- name: Source zsh
+  shell: source ~/.zshrc

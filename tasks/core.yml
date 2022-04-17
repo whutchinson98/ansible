@@ -1,0 +1,22 @@
+- name: Window Manager
+  become: true
+  apt:
+    name: ['i3', 'i3-wm', 'i3status', 'compton', 'feh']
+  tags:
+    - install
+    - wm
+- name: Useful Packages
+  become: true
+  apt:
+    name: ['flameshot', 'light']
+    tags:
+      - install
+      - core
+- name: Core Dependencies
+  become: true
+  apt:
+    name: ['curl', 'stow', 'unzip']
+  tags:
+    - install
+    - core
+    - dependencies
