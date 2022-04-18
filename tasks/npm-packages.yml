@@ -26,6 +26,13 @@
   tags:
     - install
     - npm
+- name: Install Yarn
+  npm:
+    name: yarn
+    global: yes
+  tags:
+    - install
+    - npm
 - name: Install TS-Node
   npm:
     name: ts-node
