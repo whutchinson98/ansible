@@ -48,3 +48,10 @@
     - install
     - npm
     - aws
+- name: Install Alacritty Themes
+  npm:
+    name: alacritty-themes
+    global: yes
+  tags:
+    - install
+    - npm
