@@ -19,7 +19,7 @@
     - dependencies
 - name: Remove neovim
   become: true
-  shell: rm -rf ~/neovim && rm -rf /usr/local/bin/nvim && rm -rf /usr/local/share/nvim
+  shell: rm -rf ~/neovim && rm -rf /usr/local/bin/nvim && rm -rf /usr/local/share/nvim && rm -rf /usr/bin/nvim
   tags:
     - install
     - neovim
@@ -27,6 +27,7 @@
   ansible.builtin.git:
     repo: 'https://github.com/neovim/neovim.git'
     dest: "{{ lookup('env', 'HOME') }}/neovim"
+    version: stable
   tags:
     - install
     - neovim
