@@ -5,6 +5,20 @@
   tags:
     - install
     - npm
+- name: Install Yarn
+  npm:
+    name: yarn
+    global: yes
+  tags:
+    - install
+    - npm
+- name: Install pnpm
+  npm:
+    name: pnpm
+    global: yes
+  tags:
+    - install
+    - npm
 - name: Install Eslint
   npm:
     name: eslint
