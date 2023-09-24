@@ -1,5 +1,10 @@
+- name: Node - Install Nvm
+  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+  tags:
+    - languages
+    - node
 - name: Golang
-  shell: rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz
+  shell: rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.1.darwin-amd64.tar.gz
   become: true
   tags:
     - languages
@@ -9,17 +14,3 @@
   tags:
     - languages
     - rust
-- name: Node - Install Nvm
-  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-  tags:
-    - languages
-    - node
-- name: Node - Install LTS
-  shell: '. {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install lts/*'
-  args:
-    creates: '{{ ansible_env.HOME }}/.nvm/versions/node'
-    chdir: '{{ ansible_env.HOME }}'
-    executable: /bin/bash
-  tags:
-    - languages
-    - node

@@ -1,22 +1,3 @@
-- name: Window Manager
+- name: Brew
   become: true
-  apt:
-    name: ['i3', 'i3-wm', 'i3status', 'compton', 'feh']
-  tags:
-    - install
-    - wm
-- name: Useful Packages
-  become: true
-  apt:
-    name: ['flameshot', 'light']
-    tags:
-      - install
-      - core
-- name: Core Dependencies
-  become: true
-  apt:
-    name: ['curl', 'stow', 'unzip']
-  tags:
-    - install
-    - core
-    - dependencies
+  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
